@@ -1,10 +1,5 @@
-var $ = require('jquery');
-
 var categories = ["Category-1", "Category-2", "Category-3", "Category-4"];
 var cells = [];
-var index = 0;
-var csv = require("fast-csv");
-var fs = require("fs");
 
 
 function Question (p, q, a) {
@@ -15,17 +10,21 @@ function Question (p, q, a) {
   this.answered = false;
 }
 
+Papa.parse(fileInput.files[0], {
+	complete: function(results) {
+		console.log(results);
+	}
+});
+
 $(document).ready(function() {
+
+
 
   categories.forEach(function(cat){
     $("#categories-header").append("<div class='col s12 l3' id='category-header'><p>"+cat+"</p></div>");
   });
 
-
-
 });
-
-
 
 
 
