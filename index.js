@@ -1,13 +1,12 @@
-
-function Question (p, q, a) {
+function Question (i, p, q, a) {
+  this.id = i;
   this.points = p;
   this.question = q;
   this.answer = a;
-  this.opened = false;
-  this.answered = false;
 }
 
 $(document).ready(function() {
+  $(".modal").modal();
   var cells = [];
 
   for (var i=0; i<data.length; i++) {
@@ -17,10 +16,25 @@ $(document).ready(function() {
       }
     }
     else {
-      cells[i] = new Question (data[i][0], data[i][1], data[i][2]);
-      $("#question-grid").append("<div class='col s12 l3' id="+'loc'+i+"> <a class='btn-flat btn-large' id="+i+">"+cells[i].points+"</a> </div>");
+      cells[i] = new Question (i, data[i][0], data[i][1], data[i][2]);
+      $("#question-grid").append("<div class='col s12 l3' id="+'loc'+i+"> <a class='btn-flat btn-large cell' id="+i+">"+cells[i].points+"</a> </div>");
     }
   };
+
+  $(".cell").click(function(){
+    var id = $(this).attr('id');
+    $('#modal-header').append("<h3>"+cells[id].points+"</h3>")
+    $('#modal-body').append("<h4 id='q'>"+cells[id].question+"</h4>")
+    $('#modal-body').append("<h4 id='a'>"+cells[id].answer+"</h4>")
+    $('#a').hide();
+    $('#modal-footer').append("<a id='btn' class='modal-action waves-effect btn-flat'>Reveal Answer</a>")
+    $('#modal-window').modal("open");
+  });
+
+  $("#modal-body").click(function(){
+    $('#q').toggle();
+    $('#a').toggle();
+  })
 
 
 });
