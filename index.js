@@ -1,6 +1,3 @@
-var categories = ["Category-1", "Category-2", "Category-3", "Category-4"];
-var cells = [];
-
 
 function Question (p, q, a) {
   this.points = p;
@@ -11,13 +8,19 @@ function Question (p, q, a) {
 }
 
 $(document).ready(function() {
+  var cells = [];
 
-  categories.forEach(function(cat){
-    $("#categories-header").append("<div class='col s12 l3' id='category-header'><p>"+cat+"</p></div>");
-  });
+  for (var i=0; i<data.length; i++) {
+    if (i == 0) {
+      for (var j=0; j<data[i].length;j++) {
+        $("#categories-header").append("<div class='col s12 l3' id='category-header'><p>"+data[i][j]+"</p></div>");
+      }
+    }
+    else {
+      cells[i] = new Question (data[i][0], data[i][1], data[i][2]);
+      $("#question-grid").append("<div class='col s12 l3' id="+'loc'+i+"> <a class='btn-flat btn-large' id="+i+">"+cells[i].points+"</a> </div>");
+    }
+  };
+
 
 });
-
-//"<a class='waves-effect waves-teal btn-flat' id="+10+">"+cell10.points"</a>"
-//$("#categories").append("<a class='btn-flat' id="+10+">"+cell10.points+"</a>");
-//$("#categories").append("<a class='btn-flat btn-large' id="+20+">"+cell10.points+"</a>");
