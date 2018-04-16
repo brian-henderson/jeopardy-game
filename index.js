@@ -10,24 +10,13 @@ function Question (p, q, a) {
   this.answered = false;
 }
 
-Papa.parse(fileInput.files[0], {
-	complete: function(results) {
-		console.log(results);
-	}
-});
-
 $(document).ready(function() {
-
-
 
   categories.forEach(function(cat){
     $("#categories-header").append("<div class='col s12 l3' id='category-header'><p>"+cat+"</p></div>");
   });
 
 });
-
-
-
 
 //"<a class='waves-effect waves-teal btn-flat' id="+10+">"+cell10.points"</a>"
 //$("#categories").append("<a class='btn-flat' id="+10+">"+cell10.points+"</a>");
