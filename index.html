@@ -9,6 +9,7 @@
     <script src="data.js" type="text/javascript"></script>
     <script src="index.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/style.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
@@ -36,38 +37,46 @@
 
   <div id="modal-initial" class="modal">
     <div class="modal-content">
-      <h5>Select Team Names:</h5>
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="input_1" type="text" data-length="10">
-            <label for="input_text">Team 1</label>
+      <h5>Upload CSV file </h5>
+      <form action="#">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>File</span>
+            <input type="file">
           </div>
-          <div class="input-field col s6">
-            <input id="input_2" type="text" data-length="10">
-            <label for="input_text">Team 2</label>
-          </div>
-          <div class="input-field col s6">
-            <input id="input_3" type="text" data-length="10">
-            <label for="input_text">Team 3</label>
-          </div>
-          <div class="input-field col s6">
-            <input id="input_4" type="text" data-length="10">
-            <label for="input_text">Team 4</label>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
           </div>
         </div>
-        <h5>Upload CSV file </h5>
-        <form action="#">
-          <div class="file-field input-field">
-            <div class="btn">
-              <span>File</span>
-              <input type="file">
-            </div>
-            <div class="file-path-wrapper">
-              <input class="file-path validate" type="text">
-            </div>
-          </div>
-        </form>
+      </form>
+      <h5>Input Team Names</h5>
+      <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">group</i>
+          <input type="text" class="validate team-input">
+          <label for="team-input">Team 1</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">group</i>
+          <input type="text" class="validate team-input">
+          <label for="team-input">Team 2</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">group</i>
+          <input type="text" class="validate team-input">
+          <label for="team-input">Team 3</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">group</i>
+          <input type="text" class="validate team-input">
+          <label for="team-input">Team 4</label>
+        </div>
+      </div>
+    </form>
+        <button class="btn waves-effect waves-light col l2" type="submit" id="populate" name="action"> Populate Jeopardy Game
+          <i class="material-icons right">send</i>
+        </button>
     </div>
   </div>
 

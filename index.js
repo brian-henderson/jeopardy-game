@@ -1,5 +1,5 @@
-var teams = ["Team 1", "Team 2", "Team 3", "Team 4" ];
-
+//var teams = ["Team 1", "Team 2", "Team 3", "Team 4" ];
+var teams = [];
 function Question (i, p, q, a) {
   this.id = i;
   this.points = p;
@@ -36,7 +36,18 @@ $(document).ready(function() {
     $('#modal-window').modal("open");
     $( "#"+id ).last().addClass( "disabled" );
     $( "#"+id ).empty();
+  });
 
+  var teamInputHtml = $("#team-input").html();
+
+  $("#populate").click(function(){
+    $(".team-input").each(function(){
+      var i = 0;
+      teams[i] = $(this).val();
+      //console.log($(this).val());
+      i++;
+    });
+    console.log(teams);
   });
 
   $("#modal-body").click(function(){
