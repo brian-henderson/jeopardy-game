@@ -6,9 +6,10 @@ function Question (i, p, q, a) {
 }
 
 $(document).ready(function() {
-  $(".modal").modal();
-  var cells = [];
 
+  $(".modal").modal();
+
+  var cells = [];
   for (var i=0; i<data.length; i++) {
     if (i == 0) {
       for (var j=0; j<data[i].length;j++) {
@@ -23,18 +24,21 @@ $(document).ready(function() {
 
   $(".cell").click(function(){
     var id = $(this).attr('id');
+    $('#modal-header').empty();
+    $('#modal-body').empty();
     $('#modal-header').append("<h3>"+cells[id].points+"</h3>")
     $('#modal-body').append("<h4 id='q'>"+cells[id].question+"</h4>")
     $('#modal-body').append("<h4 id='a'>"+cells[id].answer+"</h4>")
     $('#a').hide();
-    $('#modal-footer').append("<a id='btn' class='modal-action waves-effect btn-flat'>Reveal Answer</a>")
     $('#modal-window').modal("open");
+    $( "#"+id ).last().addClass( "disabled" );
+    $( "#"+id ).empty();
+
   });
 
   $("#modal-body").click(function(){
     $('#q').toggle();
     $('#a').toggle();
-  })
-
+  });
 
 });
