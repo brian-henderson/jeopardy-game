@@ -15,5 +15,9 @@ var data = [
   [ 800, "Question1", "Answer1" ], //Category 1
   [ 800, "Question2", "Answer2" ], //Category 2
   [ 800, "Question3", "Answer3" ], //Category 3
-  [ 800, "Question4", "Answer4" ]  //Category 4
+  [ 800, "Question4", "Answer4" ],  //Category 4
+  [ 1000, "Question1", "Answer1" ], //Category 1
+  [ 1000, "Question2", "Answer2" ], //Category 2
+  [ 1000, "Question3", "Answer3" ], //Category 3
+  [ 1000, "Question4", "Answer4" ]  //Category 4
 ];

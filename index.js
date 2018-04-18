@@ -1,3 +1,5 @@
+var teams = ["Team 1", "Team 2", "Team 3", "Team 4" ];
+
 function Question (i, p, q, a) {
   this.id = i;
   this.points = p;
@@ -8,6 +10,7 @@ function Question (i, p, q, a) {
 $(document).ready(function() {
 
   $(".modal").modal();
+  $("#modal-initial").modal("open");
 
   var cells = [];
   for (var i=0; i<data.length; i++) {
