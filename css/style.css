@@ -1,3 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans');
+
 html {
   text-align: center;
+  font-family: 'Black Han Sans', sans-serif;
+}
+
+body {
+  background-image: url("background.jpg");
+  background-color: #080526;
+  word-wrap: break-word;
+}
+
+#header {
+  text-align: center;
+  color: #DCA154;
+}
+
+#question-grid {
+  border-style: solid;
+  border-width: 5px;
+}
+
+.cell-div {
+  border-style: solid;
+  border-width: 5px;
+  background-color: #01099E;
+  height: 80px;
+  text-align: center;
+  font-size: 2.5em;
+  color:#DCA154;
+  border-color: black;
+}
+
+#category-header {
+  border-style: solid;
+  border-width: 5px;
+  background-color: #01099E;
+}
+
+#category-header p {
+  color: white;
+  font-weight: bold;
 }
