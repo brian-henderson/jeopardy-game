@@ -1,5 +1,3 @@
-//var teams = ["Team 1", "Team 2", "Team 3", "Team 4" ];
-var teams = [];
 function Question (i, p, q, a) {
   this.id = i;
   this.points = p;
@@ -11,6 +9,7 @@ $(document).ready(function() {
 
   $(".modal").modal();
   $("#modal-initial").modal("open");
+  $('.chips').chips();
 
   var cells = [];
   for (var i=0; i<data.length; i++) {
@@ -21,8 +20,7 @@ $(document).ready(function() {
     }
     else {
       cells[i] = new Question (i, data[i][0], data[i][1], data[i][2]);
-    //  $("#question-grid").append("<div class='col s12 l3 cell-div' id='cell-div'> <a class='btn-flat btn-large cell' id="+i+">"+cells[i].points+"</a> </div>");
-    $("#question-grid").append("<div class='col s12 l3 cell-div' id="+i+">$"+cells[i].points+"</div>");
+      $("#question-grid").append("<div class='col s12 l3 cell-div' id="+i+">$"+cells[i].points+"</div>");
     }
   };
 
@@ -30,30 +28,32 @@ $(document).ready(function() {
     var id = $(this).attr('id');
     $('#modal-header').empty();
     $('#modal-body').empty();
-    $('#modal-header').append("<h3>"+cells[id].points+"</h3>")
+    $('#modal-header').append("<h3>$"+cells[id].points+"</h3>")
     $('#modal-body').append("<h4 id='q'>"+cells[id].question+"</h4>")
     $('#modal-body').append("<h4 id='a'>"+cells[id].answer+"</h4>")
     $('#a').hide();
     $('#modal-window').modal("open");
-    //$( "#"+id ).last().addClass( "disabled" );
     $( "#"+id ).empty();
   });
 
-  var teamInputHtml = $("#team-input").html();
-
   $("#populate").click(function(){
-    $(".team-input").each(function(){
-      var i = 0;
-      teams[i] = $(this).val();
-      //console.log($(this).val());
-      i++;
-    });
-    console.log(teams);
+    var chipsValue = $('#chips-team-input').chipsData();
+    console.log(chipsValue);
+    //$.each(chipsValue, function(key, value) {
+    //  console.log(key+ ": " + value.tag)
+  //  })
   });
 
   $("#modal-body").click(function(){
     $('#q').toggle();
     $('#a').toggle();
+  });
+
+  $('.chips-placeholder').chips({
+    placeholder: 'Add Teams',
+    secondaryPlaceholder: '+Team',
+    limit: 6,
+    minLength: 1
   });
 
 });

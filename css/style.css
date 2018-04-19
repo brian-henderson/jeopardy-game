@@ -11,6 +11,14 @@ body {
   word-wrap: break-word;
 }
 
+#modal-window {
+  border-style: solid;
+  border-width: 5px;
+  background-color: #01099E;
+  color:#DCA154;
+  border-color: black;
+}
+
 #header {
   text-align: center;
   color: #DCA154;
