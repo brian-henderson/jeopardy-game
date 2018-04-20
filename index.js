@@ -36,7 +36,7 @@ $(document).ready(function() {
   });
 
   $("#populate").click(function() {
-    console.log($('.chips-placeholder').chipsData);
+    
   });
 
   $("#modal-body").click(function() {
