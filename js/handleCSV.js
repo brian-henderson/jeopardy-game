@@ -1,9 +1,10 @@
-function handleFile(files){
+var data1 = [];
+
+function handleFile(files) {
   if (window.FileReader) {
     readToText(files[0]);
-  }
-  else {
-    alert("This broweser does not support FileReader");
+  } else {
+    alert("This browser does not support FileReader");
   }
 }
 
@@ -27,14 +28,14 @@ function errorHandler(event) {
 }
 
 function processData(csv) {
-  var x = csv.split(/\n/).map(function(row){return row.split(",");})
-  x.forEach(function(row){
+  var temp = csv.split(/\n/).map(function(row) {
+    return row.split(",");
+  });
+  temp.forEach(function(row) {
     if (row.length === 1) {
-      console.log("empty line");
-    }
-    else {
-      console.log(row);
+      console.log("skipping empty line...");
+    } else {
+      data1.push(row);
     }
   });
-
 }

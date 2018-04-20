@@ -36,7 +36,10 @@ $(document).ready(function() {
   });
 
   $("#populate").click(function() {
-    
+    var csvFile = $("#csv-input").prop("files");
+    handleFile(csvFile);
+    //console.log("*************************");
+    console.log(data1);
   });
 
   $("#modal-body").click(function() {
@@ -51,8 +54,8 @@ $(document).ready(function() {
     minLength: 1
   });
 
-  $("#csv-input").change(function() {
-    console.log("");
-  });
+//  $("#csv-input").change(function() {
+//    console.log("");
+//  });
 
 });
