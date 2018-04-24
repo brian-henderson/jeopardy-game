@@ -1,4 +1,4 @@
-var data1 = [];
+var data = [];
 
 function handleFile(files) {
   if (window.FileReader) {
@@ -35,7 +35,9 @@ function processData(csv) {
     if (row.length === 1) {
       console.log("skipping empty line...");
     } else {
-      data1.push(row);
+      data.push(row);
     }
   });
+  console.log(data);
+  createTable()
 }
