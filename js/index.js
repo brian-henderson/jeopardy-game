@@ -1,3 +1,9 @@
+//var elem = document.querySelector('.chips');
+//var instance = M.Chips.init(elem);
+//var instance = M.Chips.getInstance(elem);
+//var instance = M.Carousel.getInstance(elem);
+
+
 function Question(i, p, q, a) {
   this.id = i;
   this.points = p;
@@ -14,7 +20,11 @@ $(document).ready(function() {
 
   $("#populate").click(function() {
     console.log("pop")
+    var csvFile = $("#csv-input").prop("files");
+    handleFile(csvFile);
+    console.log(data);
     $('.modal').modal("close");
+    //console.log(instance.chipsData);
   });
 
   $("#modal-body").click(function() {
@@ -27,12 +37,6 @@ $(document).ready(function() {
     secondaryPlaceholder: '+Team',
     limit: 6,
     minLength: 1
-  });
-
-  $("#csv-input").change(function() {
-    var csvFile = $("#csv-input").prop("files");
-    handleFile(csvFile);
-    console.log(data);
   });
 
 });
